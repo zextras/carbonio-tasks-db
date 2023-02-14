@@ -45,14 +45,14 @@ sources=(
 )
 
 hashsums=(
-  "afaa0ccdafa7051d3ae0d3f9f5430815bd314364fe66578b24618bed0f41bd2f"
-  "bd73b9e3ca5b538feee459173df297310d82e9d362ebe337478fe4b6b1959e4b"
-  "8040abba7d39952a1a2febc92d29d83906dc6859c80f6a042724654e0e797c31"
-  "63c941dea5f230c99a50d15368a8cda857026927a99ce31b5a90e1be21843d4a"
-  "ff07a83ae717e33f1dee9c97841d546dcf29719c30c138cff3ea8f8b42e1ea34"
+  "a1e2b8e3477899e7e030c80125b8a23c85ce6c96ae5ddc3aec43acd17f43c172"
+  "854117eb844fbe9d07049118b40c5a6d92f304c828f7c0de0c64734899287ba4"
+  "e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1"
+  "d426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47"
+  "e00a6afdcc44b379641284258dda67e2bb3566abd288393869055dc9e61fe96f"
   "e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571"
-  "921891eb0a54f0aabfd41ac0b3a1985b11c077843325bb328fb06903b5d722ed"
-  "56d0de6344ec441d98e079ba787f18eb4e712c8e18e7bd8eb05bd94e38a04876"
+  "8e549e7c6c6dfe32371c03bd0d6be4f0ac82d87426a51080a6c209a91608705d"
+  "81c49d3900c8fdd1fc025746759f802189c19a22f670b778d2ed91be95e30c42"
 )
 backup=(
     "/etc/zextras/service-discover/carbonio-tasks-db.hcl"
@@ -61,10 +61,10 @@ backup=(
 package() {
   cd "${srcdir}"
 
-  install -Dm 755 carbonio-tasks-db-setup
+  install -Dm 755 carbonio-tasks-db-setup \
     "${pkgdir}/usr/bin/carbonio-tasks-db-setup"
 
-  install -Dm 755 carbonio-tasks-db-bootstrap
+  install -Dm 755 carbonio-tasks-db-bootstrap \
     "${pkgdir}/usr/bin/carbonio-tasks-db-bootstrap"
 
   install -Dm 644 carbonio-tasks-db-sidecar.service \
