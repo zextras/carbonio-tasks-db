@@ -26,7 +26,8 @@ Service sidecar used by Carbonio Tasks to communicate with a centralized databas
 - Install PostgreSQL: `apt install postgresql`
 - Create a `postgres` superuser:
   ```bash
-  # sudo -u postgres psql
+  # sudo -u postgres
+  $ psql
   # CREATE ROLE "carbonio-adm" WITH LOGIN SUPERUSER encrypted password 'your-secret-password';
   # CREATE DATABASE "carbonio-tasks-db" owner "carbonio-adm";
   # \q
@@ -100,13 +101,13 @@ s.r.l. and is licensed under [CC-BY-NC-SA](https://creativecommons.org/licenses/
 
 Where not specified, all source files owned by Zextras s.r.l. are licensed under AGPL-3.0-only
 
-[contributors-badge]: https://img.shields.io/github/contributors/zextras/carbonio-user-management-sdk "Contributors"
+[contributors-badge]: https://img.shields.io/github/contributors/zextras/carbonio-tasks-sdk "Contributors"
 
-[contributors]: https://github.com/zextras/carbonio-user-management-sdk/graphs/contributors "Contributors"
+[contributors]: https://github.com/zextras/carbonio-tasks-sdk/graphs/contributors "Contributors"
 
-[activity-badge]: https://img.shields.io/github/commit-activity/m/zextras/carbonio-user-management-sdk "Activity"
+[activity-badge]: https://img.shields.io/github/commit-activity/m/zextras/carbonio-tasks-sdk "Activity"
 
-[activity]: https://github.com/zextras/carbonio-user-management-sdk/pulse "Activity"
+[activity]: https://github.com/zextras/carbonio-tasks-sdk/pulse "Activity"
 
 [license-badge]: https://img.shields.io/badge/license-AGPL-blue.svg
 
