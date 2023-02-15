@@ -1,0 +1,118 @@
+# SPDX-FileCopyrightText: 2023 Zextras <https://www.zextras.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+targets=(
+  "centos"
+  "ubuntu"
+)
+pkgname="carbonio-tasks-db"
+pkgver="0.0.1"
+pkgrel="1"
+pkgdesc="Carbonio Tasks database sidecar"
+pkgdesclong=(
+  "Carbonio Tasks database sidecar"
+)
+maintainer="Zextras <packages@zextras.com>"
+url="https://zextras.com"
+section="mail"
+priority="optional"
+arch="amd64"
+license=("spdx:AGPL-3.0-only")
+depends:apt=(
+  "service-discover"
+  "pending-setups"
+  "carbonio-core"
+  "postgresql-client"
+)
+
+depends:yum=(
+  "service-discover"
+  "pending-setups"
+  "carbonio-core"
+  "postgresql"
+)
+
+sources=(
+  "carbonio-tasks-db.hcl"
+  "carbonio-tasks-db-bootstrap"
+  "carbonio-tasks-db-pending-setup"
+  "carbonio-tasks-db-setup"
+  "carbonio-tasks-db-sidecar.service"
+  "intentions.json"
+  "policies.json"
+  "service-protocol.json"
+)
+
+hashsums=(
+  "a1e2b8e3477899e7e030c80125b8a23c85ce6c96ae5ddc3aec43acd17f43c172"
+  "854117eb844fbe9d07049118b40c5a6d92f304c828f7c0de0c64734899287ba4"
+  "e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1"
+  "d426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47"
+  "e00a6afdcc44b379641284258dda67e2bb3566abd288393869055dc9e61fe96f"
+  "e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571"
+  "8e549e7c6c6dfe32371c03bd0d6be4f0ac82d87426a51080a6c209a91608705d"
+  "81c49d3900c8fdd1fc025746759f802189c19a22f670b778d2ed91be95e30c42"
+)
+backup=(
+    "/etc/zextras/service-discover/carbonio-tasks-db.hcl"
+)
+
+package() {
+  cd "${srcdir}"
+
+  install -Dm 755 carbonio-tasks-db-setup \
+    "${pkgdir}/usr/bin/carbonio-tasks-db-setup"
+
+  install -Dm 755 carbonio-tasks-db-bootstrap \
+    "${pkgdir}/usr/bin/carbonio-tasks-db-bootstrap"
+
+  install -Dm 644 carbonio-tasks-db-sidecar.service \
+    "${pkgdir}/lib/systemd/system/carbonio-tasks-db-sidecar.service"
+
+  install -Dm 644 carbonio-tasks-db.hcl \
+    "${pkgdir}/etc/zextras/service-discover/carbonio-tasks-db.hcl"
+
+  install -Dm 644 carbonio-tasks-db-pending-setup \
+    "${pkgdir}/etc/zextras/pending-setups.d/carbonio-tasks-db-setup.sh"
+
+  install -Dm 644 intentions.json \
+    "${pkgdir}/etc/carbonio/tasks-db/service-discover/intentions.json"
+
+  install -Dm 644 policies.json \
+    "${pkgdir}/etc/carbonio/tasks-db/service-discover/policies.json"
+
+  install -Dm 644 service-protocol.json \
+    "${pkgdir}/etc/carbonio/tasks-db/service-discover/service-protocol.json"
+}
+
+postinst() {
+  getent group 'carbonio-tasks-db' >/dev/null ||
+    groupadd -r 'carbonio-tasks-db'
+  getent passwd 'carbonio-tasks-db' >/dev/null ||
+    useradd -r -M -g 'carbonio-tasks-db' -s /sbin/nologin 'carbonio-tasks-db'
+
+  if [ -d /run/systemd/system ]; then
+    systemctl daemon-reload >/dev/null 2>&1 || :
+    systemctl enable carbonio-tasks-db-sidecar.service >/dev/null 2>&1 || :
+  fi
+
+  echo "======================================================"
+  echo "Carbonio Tasks DB installed successfully!             "
+  echo "You must run pending-setups to configure it correctly."
+  echo "======================================================"
+}
+
+
+prerm() {
+  if [ -d /run/systemd/system ]; then
+    systemctl --no-reload disable carbonio-tasks-db-sidecar.service >/dev/null 2>&1 || :
+    systemctl stop carbonio-tasks-db-sidecar.service >/dev/null 2>&1 || :
+  fi
+}
+
+postrm() {
+  if [ -d /run/systemd/system ]; then
+    systemctl daemon-reload >/dev/null 2>&1 || :
+  fi
+}
