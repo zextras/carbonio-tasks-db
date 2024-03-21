@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 pkgname="carbonio-tasks-db"
-pkgver="0.0.2"
+pkgver="0.0.3"
 pkgrel="1"
 pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
@@ -62,6 +62,9 @@ package() {
 
   install -Dm 755 carbonio-tasks-db-bootstrap \
     "${pkgdir}/usr/bin/carbonio-tasks-db-bootstrap"
+
+  install -Dm 755 check_db_existence.sh \
+    "${pkgdir}/usr/bin/check_db_existence.sh"
 
   install -Dm 644 carbonio-tasks-db-sidecar.service \
     "${pkgdir}/lib/systemd/system/carbonio-tasks-db-sidecar.service"
