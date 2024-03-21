@@ -96,15 +96,19 @@ echo "Check postgres connection: $(check_postgres_connection)"
 # Check if the database exists
 # ============================
 set +e
-psql -h "${POSTGRES_HOST}" -p "${POSTGRES_PORT}" -U "${ROOT_DB_USERNAME}" "${NOT_ASK_FOR_PGPASSWORD}" "${DATABASE_NAME}" -tAq 2>/dev/null<<EOF
+QUERY_RESULT=$(psql -h "${POSTGRES_HOST}" -p "${POSTGRES_PORT}" -U "${ROOT_DB_USERNAME}" "${NOT_ASK_FOR_PGPASSWORD}" "${DATABASE_NAME}" -tAq 2>/dev/null<<EOF
 SELECT 1 FROM pg_database WHERE datname = 'carbonio-tasks-db';
 EOF
+)
 
-PSQL_EXIT_CODE="$?"
+PSQL_EXIT_CODE="$?" #is this really needed?
 
-if [ "$PSQL_EXIT_CODE" == "0" ]; then
-  echo "Database already initialized! Quitting"
+if [ "$PSQL_EXIT_CODE" == "0" ] && [ "$QUERY_RESULT" == "1" ]; then
+  echo "Database exists!"
   exit 0
+else
+  echo "Error: Database does not exist or encountered an error."
+  exit 1
 fi
 
 set -e
