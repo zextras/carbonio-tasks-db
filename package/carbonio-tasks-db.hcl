@@ -12,7 +12,7 @@ services {
     {
       "id"        = "check_db_existence"
       "name"      = "Database existence check"
-      "args"      = ["sudo", "/usr/bin/check_db_existence.sh"]
+      "args"      = ["/bin/sudo", "/usr/bin/check_db_existence.sh"]
       "interval"  = "5s"
     }
   ]
