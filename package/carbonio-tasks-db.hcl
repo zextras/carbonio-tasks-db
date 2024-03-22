@@ -10,10 +10,10 @@ services {
       interval = "5s"
     },
     {
-      "id": "check_db_existence"
-      "name": "Database existence check"
-      "args": ["/usr/bin/check_db_existence.sh"]
-      "interval": "5s"
+      "id"        = "check_db_existence"
+      "name"      = "Database existence check"
+      "args"      = ["/usr/bin/check_db_existence.sh"]
+      "interval"  = "5s"
     }
   ]
   connect {
