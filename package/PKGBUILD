@@ -4,7 +4,7 @@
 
 pkgname="carbonio-tasks-db"
 pkgver="0.0.2"
-pkgrel="1"
+pkgrel="SNAPSHOT"
 pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
 section="mail"
@@ -42,8 +42,8 @@ source=(
   "service-protocol.json"
 )
 
-sha256sums=('a1e2b8e3477899e7e030c80125b8a23c85ce6c96ae5ddc3aec43acd17f43c172'
-  '854117eb844fbe9d07049118b40c5a6d92f304c828f7c0de0c64734899287ba4'
+sha256sums=('9e1a9117611856eae439be8dca67e6953aeaee08c39611e4d3ee26667c76ebaf'
+  'ca8b667e879d4a32e61c420618efb8a9be256f0d89e4acfd145d8c253c95547b'
   'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
   'd426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47'
   'e00a6afdcc44b379641284258dda67e2bb3566abd288393869055dc9e61fe96f'

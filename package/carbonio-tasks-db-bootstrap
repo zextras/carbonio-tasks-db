@@ -96,16 +96,15 @@ echo "Check postgres connection: $(check_postgres_connection)"
 # Check if the database exists
 # ============================
 set +e
-CURRENT_VERSION=$(psql -h "${POSTGRES_HOST}" -p "${POSTGRES_PORT}" -U "${ROOT_DB_USERNAME}" "${NOT_ASK_FOR_PGPASSWORD}" "${DATABASE_NAME}" -tAq 2>/dev/null<<EOF
-SELECT version FROM DB_INFO LIMIT 1;
+QUERY_RESULT=$(psql -h "${POSTGRES_HOST}" -p "${POSTGRES_PORT}" -U "${ROOT_DB_USERNAME}" "${NOT_ASK_FOR_PGPASSWORD}" "${DATABASE_NAME}" -tAq 2>/dev/null<<EOF
+SELECT 1 FROM pg_database WHERE datname = 'carbonio-tasks-db';
 EOF
 )
 
 PSQL_EXIT_CODE="$?"
 
-if [ "$PSQL_EXIT_CODE" == "0" ]; then
-  echo "Current version is: ${CURRENT_VERSION}."
-  echo "Database already initialized! Quitting"
+if [ "$PSQL_EXIT_CODE" == "0" ] && [ "$QUERY_RESULT" == "1" ]; then
+  echo "Database exists!"
   exit 0
 fi
 
