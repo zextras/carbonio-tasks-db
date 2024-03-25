@@ -106,9 +106,6 @@ PSQL_EXIT_CODE="$?"
 if [ "$PSQL_EXIT_CODE" == "0" ] && [ "$QUERY_RESULT" == "1" ]; then
   echo "Database exists!"
   exit 0
-else
-  echo "Error: Database does not exist or encountered an error."
-  exit 1
 fi
 
 set -e

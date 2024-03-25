@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 pkgname="carbonio-tasks-db"
-pkgver="0.0.2SNAPSHOT"
-pkgrel="1"
+pkgver="0.0.2"
+pkgrel="SNAPSHOT"
 pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
 section="mail"
@@ -43,7 +43,7 @@ source=(
 )
 
 sha256sums=('9e1a9117611856eae439be8dca67e6953aeaee08c39611e4d3ee26667c76ebaf'
-  'e263cc528bb8dfc233d396df4aeb8dba08be84f21d487f0ab04a1bfa2cb4e01b'
+  'ca8b667e879d4a32e61c420618efb8a9be256f0d89e4acfd145d8c253c95547b'
   'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
   'd426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47'
   'e00a6afdcc44b379641284258dda67e2bb3566abd288393869055dc9e61fe96f'
