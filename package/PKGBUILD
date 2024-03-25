@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 pkgname="carbonio-tasks-db"
-pkgver="0.0.3"
+pkgver="0.0.2 SNAPSHOT"
 pkgrel="1"
 pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
@@ -40,18 +40,16 @@ source=(
   "intentions.json"
   "policies.json"
   "service-protocol.json"
-  "check_db_existence.sh"
 )
 
-sha256sums=('707ebbdff4f7abd29b05ca957107bb1d73fb88526d283fb954ee6820350f6973'
-  '99ef8eed93224301d15ce013e6e57593a9afdf8fda87f85392671594e83a454b'
+sha256sums=('9e1a9117611856eae439be8dca67e6953aeaee08c39611e4d3ee26667c76ebaf'
+  'e263cc528bb8dfc233d396df4aeb8dba08be84f21d487f0ab04a1bfa2cb4e01b'
   'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
   'd426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47'
   'e00a6afdcc44b379641284258dda67e2bb3566abd288393869055dc9e61fe96f'
   'e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571'
   '8e549e7c6c6dfe32371c03bd0d6be4f0ac82d87426a51080a6c209a91608705d'
-  '81c49d3900c8fdd1fc025746759f802189c19a22f670b778d2ed91be95e30c42'
-  '598328f98eca2fef91c750fce11552f22329db7a41e2355f5ea037067837e181')
+  '81c49d3900c8fdd1fc025746759f802189c19a22f670b778d2ed91be95e30c42')
 backup=(
   "etc/zextras/service-discover/carbonio-tasks-db.hcl"
 )
@@ -64,9 +62,6 @@ package() {
 
   install -Dm 755 carbonio-tasks-db-bootstrap \
     "${pkgdir}/usr/bin/carbonio-tasks-db-bootstrap"
-
-  install -Dm 755 check_db_existence.sh \
-    "${pkgdir}/usr/bin/check_db_existence.sh"
 
   install -Dm 644 carbonio-tasks-db-sidecar.service \
     "${pkgdir}/lib/systemd/system/carbonio-tasks-db-sidecar.service"

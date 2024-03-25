@@ -8,12 +8,6 @@ services {
       tcp      = "127.0.0.1:5432"
       timeout  = "1s"
       interval = "5s"
-    },
-    {
-      "id"        = "check_db_existence"
-      "name"      = "Database existence check"
-      "args"      = ["/usr/bin/check_db_existence.sh"]
-      "interval"  = "5s"
     }
   ]
   connect {
