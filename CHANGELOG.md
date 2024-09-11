@@ -8,6 +8,13 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/Zextras/carbonio-tasks-db/compare/v0.0.3...v0.0.4) (2024-09-11)
+
+
+### Features
+
+* add ubuntu 24.04 (ubuntu-noble) support ([#8](https://github.com/Zextras/carbonio-tasks-db/issues/8)) ([c6a4418](https://github.com/Zextras/carbonio-tasks-db/commit/c6a44187482de50561f7d99d3006c1736cf94781))
+
 ### [0.0.3](https://github.com/Zextras/carbonio-tasks-db/compare/v0.0.2...v0.0.3) (2024-04-12)
 
 
