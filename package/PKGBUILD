@@ -32,9 +32,9 @@ depends__yum=(
 )
 
 source=(
+  "111-carbonio-tasks-db-setup.sh"
   "carbonio-tasks-db.hcl"
   "carbonio-tasks-db-bootstrap"
-  "carbonio-tasks-db-pending-setup"
   "carbonio-tasks-db-setup"
   "carbonio-tasks-db-sidecar.service"
   "intentions.json"
@@ -43,9 +43,9 @@ source=(
 )
 
 sha256sums=(
+  'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
   '04e1cecee08385261acd5b72ecc1ad09ad6fd4be44705cff0096be9727d01749'
   '816183bfee31f4492d76010efc59f5af17af1d85875d92aa5366c777b21a329f'
-  'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
   'd426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47'
   '21dfbea8d0c1794efede454a8eec55ae6b3cbaf5b4e9192d66370efb7ade387e'
   'e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571'
@@ -59,6 +59,9 @@ backup=(
 package() {
   cd "${srcdir}"
 
+  install -Dm 644 111-carbonio-tasks-db-setup.sh \
+    "${pkgdir}/etc/zextras/pending-setups.d/111-carbonio-tasks-db-setup.sh"
+
   install -Dm 755 carbonio-tasks-db-setup \
     "${pkgdir}/usr/bin/carbonio-tasks-db-setup"
 
@@ -70,9 +73,6 @@ package() {
 
   install -Dm 644 carbonio-tasks-db.hcl \
     "${pkgdir}/etc/zextras/service-discover/carbonio-tasks-db.hcl"
-
-  install -Dm 644 carbonio-tasks-db-pending-setup \
-    "${pkgdir}/etc/zextras/pending-setups.d/carbonio-tasks-db-setup.sh"
 
   install -Dm 644 intentions.json \
     "${pkgdir}/etc/carbonio/tasks-db/service-discover/intentions.json"
