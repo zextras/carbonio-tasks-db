@@ -1,12 +1,13 @@
-<!--
-SPDX-FileCopyrightText: 2024 Zextras <https://www.zextras.com>
-
-SPDX-License-Identifier: AGPL-3.0-only
--->
-
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.5](https://github.com/zextras/carbonio-tasks-db/compare/v0.0.4...v0.0.5) (2025-11-28)
+
+
+### Bug Fixes
+
+* revert WantedBy for compatibility with older systems ([#12](https://github.com/zextras/carbonio-tasks-db/issues/12)) ([a489444](https://github.com/zextras/carbonio-tasks-db/commit/a48944450b918c33b85f0f2e88aa672da0f5e092))
 
 ### [0.0.4](https://github.com/Zextras/carbonio-tasks-db/compare/v0.0.3...v0.0.4) (2024-09-11)
 
