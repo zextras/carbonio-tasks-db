@@ -4,7 +4,7 @@
 
 pkgname="carbonio-tasks-db"
 pkgver="0.0.5"
-pkgrel="1"
+pkgrel="SNAPSHOT"
 pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
 section="mail"
