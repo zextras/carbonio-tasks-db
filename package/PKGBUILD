@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 pkgname="carbonio-tasks-db"
-pkgver="0.0.5"
+pkgver="0.0.6"
 pkgrel="SNAPSHOT"
 pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
