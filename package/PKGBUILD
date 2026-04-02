@@ -41,19 +41,19 @@ source=(
   "policies.json"
   "service-protocol.json"
 )
+backup=(
+  "etc/zextras/service-discover/carbonio-tasks-db.hcl"
+)
 
 sha256sums=(
   'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
   '04e1cecee08385261acd5b72ecc1ad09ad6fd4be44705cff0096be9727d01749'
   '816183bfee31f4492d76010efc59f5af17af1d85875d92aa5366c777b21a329f'
   'd426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47'
-  '028cd377cc24633d117c6eaa81100bbe5bb7bac68f00b316228f69d46c79c840'
+  '35801ecd1329a7462affa25fc337e64adb6c036077acd1f724db00794f2a04ba'
   'e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571'
   '8e549e7c6c6dfe32371c03bd0d6be4f0ac82d87426a51080a6c209a91608705d'
   '81c49d3900c8fdd1fc025746759f802189c19a22f670b778d2ed91be95e30c42'
-  )
-backup=(
-  "etc/zextras/service-discover/carbonio-tasks-db.hcl"
 )
 
 package() {
@@ -85,10 +85,10 @@ package() {
 }
 
 postinst() {
-  getent group 'carbonio-tasks-db' >/dev/null ||
-    groupadd -r 'carbonio-tasks-db'
-  getent passwd 'carbonio-tasks-db' >/dev/null ||
-    useradd -r -M -g 'carbonio-tasks-db' -s /sbin/nologin 'carbonio-tasks-db'
+  getent group 'carbonio-tasks-db' >/dev/null \
+    || groupadd -r 'carbonio-tasks-db'
+  getent passwd 'carbonio-tasks-db' >/dev/null \
+    || useradd -r -M -g 'carbonio-tasks-db' -s /sbin/nologin 'carbonio-tasks-db'
 
   if [ -d /run/systemd/system ]; then
     systemctl daemon-reload >/dev/null 2>&1 || :
