@@ -13,6 +13,10 @@ library(
 
 dt3_pipeline(
     repoName: 'carbonio-tasks-db',
-    packaging: [pkgbuildPath: 'package/PKGBUILD'],
+    packaging: [
+        pkgbuildPath: 'package/PKGBUILD',
+        ubuntuSinglePkg: false,
+        rockySinglePkg: false,
+    ],
     reuse: [projectType: 'CE'],
 )
