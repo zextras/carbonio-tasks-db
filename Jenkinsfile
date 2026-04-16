@@ -19,4 +19,9 @@ dt3_pipeline(
         rockySinglePkg: false,
     ],
     reuse: [projectType: 'CE'],
+    failureNotificationRecipients: [
+        'matteo.galvagni@zextras.com',
+        'noman.alishaukat@zextras.com',
+        'riccardo.degan@zextras.com',
+    ],
 )
