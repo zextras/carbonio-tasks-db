@@ -15,6 +15,7 @@ dt3_pipeline(
     repoName: 'carbonio-tasks-db',
     packaging: [
         pkgbuildPath: 'package/PKGBUILD',
+        buildFlags: '-ds',
         ubuntuSinglePkg: false,
         rockySinglePkg: false,
     ],
