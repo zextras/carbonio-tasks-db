@@ -9,7 +9,7 @@ pkgdesc="Carbonio Tasks database sidecar"
 maintainer="Zextras <packages@zextras.com>"
 section="mail"
 priority="optional"
-arch=('x86_64')
+arch=('any')
 copyright=(
   "2022, Zextras <https://www.zextras.com>"
 )
