@@ -1,3 +1,14 @@
+## [0.2.0](https://github.com/zextras/carbonio-tasks-db/compare/v0.1.0...v0.2.0) (2026-05-25)
+
+### Features
+
+* **packaging:** use arch=('any') for architecture-independent package ([#36](https://github.com/zextras/carbonio-tasks-db/issues/36)) ([810adf7](https://github.com/zextras/carbonio-tasks-db/commit/810adf707409edbcdb4e500b34a3a3b028083c76))
+
+### Bug Fixes
+
+* **deps:** add explicit service-discover-base dependency ([#38](https://github.com/zextras/carbonio-tasks-db/issues/38)) ([22db997](https://github.com/zextras/carbonio-tasks-db/commit/22db997d79b056bae4e880112931904c3b91d569))
+* **sidecar:** increase startup timeout for RHEL8 compatibility ([#37](https://github.com/zextras/carbonio-tasks-db/issues/37)) ([c0890c8](https://github.com/zextras/carbonio-tasks-db/commit/c0890c8b19bdb0de336cb89640e098585dc3da55))
+
 ## [0.1.0](https://github.com/zextras/carbonio-tasks-db/compare/v0.0.6...v0.1.0) (2026-05-04)
 
 ### Features
