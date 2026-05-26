@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/zextras/carbonio-tasks-db/compare/v0.2.0...v0.2.1) (2026-05-26)
+
+### Bug Fixes
+
+* add LICENSES/AGPL-3.0-only.txt and unignore LICENSES/ ([#39](https://github.com/zextras/carbonio-tasks-db/issues/39)) ([bd1bcf7](https://github.com/zextras/carbonio-tasks-db/commit/bd1bcf782510c7f9584d8e3d22d705e3ec73d2df))
+* revert jenkins-lib-common to dt3-migration branch ([#40](https://github.com/zextras/carbonio-tasks-db/issues/40)) ([c107a01](https://github.com/zextras/carbonio-tasks-db/commit/c107a01396e57a3a44220296534ef6367cd631fd))
+
 <!--
 SPDX-FileCopyrightText: 2026 Zextras <https://www.zextras.com>
 
