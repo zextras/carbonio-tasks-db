@@ -19,10 +19,5 @@ dt3_pipeline(
         ubuntuSinglePkg: false,
         rockySinglePkg: false,
     ],
-    reuse: [projectType: 'CE'],
-    failureNotificationRecipients: [
-        'matteo.galvagni@zextras.com',
-        'noman.alishaukat@zextras.com',
-        'riccardo.degan@zextras.com',
-    ],
+    reuse: [projectType: 'CE']
 )
