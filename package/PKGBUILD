@@ -53,8 +53,8 @@ sha256sums=(
   '04e1cecee08385261acd5b72ecc1ad09ad6fd4be44705cff0096be9727d01749'
   '3e30cee651cfee45866e84fb47640815bfcc73a31b3c8ba632a9ffe12c0aee67'
   'd426fe19ba6d14b02158688074eee6e84193d0be90de62ff845c2be1e5afeb47'
-  '2e9d6de9fc710e731265324d079b2949b309152b58b7500f385c24fbf1df4a6b'
-  '9b6177b1b176ed37d540de275cc682f90c8ad5b6e2bd7ad51d28ce25343265dd'
+  '6d4244cee078dafd9f424a8df565794c5e21081315534552ef1894a4ca56fc87'
+  'a3c630c20193775977d316ba756b6c9ef4638c450b621cad96241c5fce91e79c'
   'e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571'
   '8e549e7c6c6dfe32371c03bd0d6be4f0ac82d87426a51080a6c209a91608705d'
   '81c49d3900c8fdd1fc025746759f802189c19a22f670b778d2ed91be95e30c42'
@@ -100,10 +100,10 @@ package__rocky_8() { _package_legacy; }
 package__ubuntu_jammy() { _package_legacy; }
 
 postinst() {
-  getent group 'carbonio-tasks-db' >/dev/null \
-    || groupadd -r 'carbonio-tasks-db'
-  getent passwd 'carbonio-tasks-db' >/dev/null \
-    || useradd -r -M -g 'carbonio-tasks-db' -s /sbin/nologin 'carbonio-tasks-db'
+  getent group 'carbonio-tasks-db' >/dev/null ||
+    groupadd -r 'carbonio-tasks-db'
+  getent passwd 'carbonio-tasks-db' >/dev/null ||
+    useradd -r -M -g 'carbonio-tasks-db' -s /sbin/nologin 'carbonio-tasks-db'
 
   if [ -d /run/systemd/system ]; then
     systemctl daemon-reload >/dev/null 2>&1 || :
