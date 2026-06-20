@@ -4,7 +4,37 @@ SPDX-PackageSupplier = "Zextras <packages@zextras.com>"
 SPDX-PackageDownloadLocation = "https://github.com/Zextras/carbonio-tasks-db"
 
 [[annotations]]
-path = "**"
+path = "COPYING"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "THIRDPARTIES"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = ".github/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = ".releaserc.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = "yap.json"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Zextras <https://www.zextras.com>"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = ["package/intentions.json", "package/policies.json", "package/service-protocol.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Zextras <https://www.zextras.com>"
 SPDX-License-Identifier = "AGPL-3.0-only"
