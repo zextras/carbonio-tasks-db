@@ -1,3 +1,9 @@
+## [0.3.0](https://github.com/zextras/carbonio-tasks-db/compare/v0.2.2...v0.3.0) (2026-06-23)
+
+### Features
+
+* migrate to dt3-pipeline ([#43](https://github.com/zextras/carbonio-tasks-db/issues/43)) ([7307809](https://github.com/zextras/carbonio-tasks-db/commit/7307809ac8e0241bedb8b78cbfbc0e62db00d308))
+
 ## [0.2.1](https://github.com/zextras/carbonio-tasks-db/compare/v0.2.0...v0.2.1) (2026-05-26)
 
 ### Bug Fixes
