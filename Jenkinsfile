@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 
 library(
-    identifier: 'jenkins-lib-common@dt3-migration',
+    identifier: 'jenkins-lib-common@dt3-pipeline',
     retriever: modernSCM([
         $class: 'GitSCMSource',
         credentialsId: 'jenkins-integration-with-github-account',
@@ -19,10 +19,5 @@ dt3_pipeline(
         ubuntuSinglePkg: false,
         rockySinglePkg: false,
     ],
-    reuse: [projectType: 'CE'],
-    failureNotificationRecipients: [
-        'matteo.galvagni@zextras.com',
-        'noman.alishaukat@zextras.com',
-        'riccardo.degan@zextras.com',
-    ],
+    reuse: [projectType: 'CE']
 )
