@@ -45,7 +45,7 @@ or via yum:
 
  ```bash
 sudo yum install carbonio-tasks-db
-```   
+```  
 
 ### Configuration
 
