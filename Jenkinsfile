@@ -19,5 +19,12 @@ dt3_pipeline(
         ubuntuSinglePkg: false,
         rockySinglePkg: false,
     ],
+    docker: [[
+        dockerfile: 'docker/tasks-db-sidecar/Dockerfile',
+        imageName: 'carbonio-tasks-db-sidecar',
+        platforms: ['linux/amd64', 'linux/arm64'] as Set,
+        title: 'Carbonio Tasks DB Sidecar',
+        description: 'Carbonio Tasks DB sidecar service',
+    ]],
     reuse: [projectType: 'CE']
 )
