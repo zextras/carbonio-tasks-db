@@ -1,3 +1,5 @@
+## [0.3.31](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.30...v0.3.31) (2026-10-08)
+
 ## [0.3.30](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.29...v0.3.30) (2026-10-07)
 
 ## [0.3.29](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.28...v0.3.29) (2026-10-01)
