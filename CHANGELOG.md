@@ -1,3 +1,9 @@
+## [0.3.40](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.39...v0.3.40) (2026-11-05)
+
+### Bug Fixes
+
+* **setup:** reuse a deterministic Consul token per node - CO-3612 ([#90](https://github.com/zextras/carbonio-tasks-db/issues/90)) ([cfebb6f](https://github.com/zextras/carbonio-tasks-db/commit/cfebb6f9e5ed45662d6583206a52c9104e4d0684))
+
 ## [0.3.39](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.38...v0.3.39) (2026-11-01)
 
 ## [0.3.38](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.37...v0.3.38) (2026-10-30)
