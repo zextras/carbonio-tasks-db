@@ -1,3 +1,9 @@
+## [0.3.41](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.40...v0.3.41) (2026-11-10)
+
+### Bug Fixes
+
+* **docker:** create the carbonio-tasks-db sidecar system user ([#95](https://github.com/zextras/carbonio-tasks-db/issues/95)) ([e561a5c](https://github.com/zextras/carbonio-tasks-db/commit/e561a5cf82fab786b62cd1eaac081cfd54e63d9c))
+
 ## [0.3.40](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.39...v0.3.40) (2026-11-05)
 
 ### Bug Fixes
