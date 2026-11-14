@@ -1,3 +1,9 @@
+## [0.3.43](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.42...v0.3.43) (2026-11-14)
+
+### Bug Fixes
+
+* fail the bootstrap when Consul KV can't be written (CO-4748) ([#97](https://github.com/zextras/carbonio-tasks-db/issues/97)) ([2c06bba](https://github.com/zextras/carbonio-tasks-db/commit/2c06bba97bf6d858d58d03a87b77e3f5951fba16))
+
 ## [0.3.42](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.41...v0.3.42) (2026-11-13)
 
 ## [0.3.41](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.40...v0.3.41) (2026-11-10)
