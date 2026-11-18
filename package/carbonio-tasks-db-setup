@@ -49,7 +49,12 @@ service-discover service-token ensure --service carbonio-tasks-db --policy "${PO
 
 consul reload
 
-systemctl restart carbonio-tasks-db-sidecar.service
+# Clear a start limit hit while the token or the registration was missing
+systemctl reset-failed carbonio-tasks-db-sidecar.service || true
+systemctl restart carbonio-tasks-db-sidecar.service || {
+  echo "Setup failed: cannot start carbonio-tasks-db-sidecar"
+  exit 1
+}
 
 service-discover service-token prune-legacy --service carbonio-tasks-db --policy "${POLICY_NAME}"
 
