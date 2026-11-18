@@ -1,3 +1,9 @@
+## [0.3.45](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.44...v0.3.45) (2026-11-18)
+
+### Bug Fixes
+
+* [CO-4798] skip the tasks-db sidecar until its token exists ([#99](https://github.com/zextras/carbonio-tasks-db/issues/99)) ([a02b2ce](https://github.com/zextras/carbonio-tasks-db/commit/a02b2ce2ee37d396b8aaab0cbe4c502d81afa2af))
+
 ## [0.3.44](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.43...v0.3.44) (2026-11-17)
 
 ## [0.3.43](https://github.com/zextras/carbonio-tasks-db/compare/v0.3.42...v0.3.43) (2026-11-14)
