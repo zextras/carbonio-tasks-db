@@ -20,6 +20,7 @@ url="https://github.com/zextras"
 depends__apt=(
   "service-discover"
   "service-discover-base"
+  "service-discover-template"
   "pending-setups"
   "carbonio-core"
   "postgresql-client"
@@ -28,6 +29,7 @@ depends__apt=(
 depends__yum=(
   "service-discover"
   "service-discover-base"
+  "service-discover-template"
   "pending-setups"
   "carbonio-core"
   "postgresql"
@@ -35,7 +37,7 @@ depends__yum=(
 
 source=(
   "111-${pkgname}-setup.sh"
-  "${pkgname}.hcl"
+  "${pkgname}-template.hcl"
   "${pkgname}-bootstrap"
   "${pkgname}-setup"
   "${pkgname}-sidecar.service"
@@ -44,15 +46,12 @@ source=(
   "policies.json"
   "service-protocol.json"
 )
-backup=(
-  "etc/zextras/service-discover/${pkgname}.hcl"
-)
 
 sha256sums=(
   'e19c3dae9fb03ac5604a1dd43d458fe453e62e3cb306e5e9a8cca72055dee4f1'
-  '04e1cecee08385261acd5b72ecc1ad09ad6fd4be44705cff0096be9727d01749'
+  '86c48e382a4f8aad3c0b8d83cf2c9036fc3755942456f15d367d1a3f78c799ee'
   'f49f1274baa4ac66f261743e148ce0bef19b272c0786552c80af2a8720e51100'
-  '5cbf39dda47f77cdad25b9fb760beea9a1a29ef89696c574a36542b2471af4f7'
+  '3bc7240d8d34c37b010f479e214c082e1479d5ec3390cdaff331285f546224ac'
   'e232c98c7ce4f4d24dd0e35896aa789346498e7a394916011feedf6f05f4d065'
   'a3c630c20193775977d316ba756b6c9ef4638c450b621cad96241c5fce91e79c'
   'e31d1e76d7530734922ce14c715e62a005b3ec79a40a4cc35c8c8a5089b79571'
@@ -70,8 +69,8 @@ _package_common() {
   install -Dm755 "${srcdir}/${pkgname}-bootstrap" \
     "${pkgdir}/usr/bin/${pkgname}-bootstrap"
 
-  install -Dm644 "${srcdir}/${pkgname}.hcl" \
-    "${pkgdir}/etc/zextras/service-discover/${pkgname}.hcl"
+  install -Dm644 "${srcdir}/${pkgname}-template.hcl" \
+    "${pkgdir}/etc/zextras/service-discover/templates/${pkgname}-template.hcl"
 
   install -Dm644 "${srcdir}/intentions.json" \
     "${pkgdir}/etc/carbonio/tasks-db/service-discover/intentions.json"
@@ -123,6 +122,11 @@ prerm() {
 }
 
 postrm() {
+  rm -f /etc/zextras/service-discover/carbonio-tasks-db.hcl
+  if [ "$1" = "purge" ]; then
+    rm -f /etc/zextras/service-discover/carbonio-tasks-db.env
+  fi
+
   if [ -d /run/systemd/system ]; then
     systemctl daemon-reload >/dev/null 2>&1 || :
   fi
